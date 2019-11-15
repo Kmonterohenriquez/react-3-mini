@@ -31,13 +31,13 @@ class App extends Component {
   getVehicles() {
     // axios (GET)
     // setState with response -> vehiclesToDisplay
-    axios.get('joes-autos.herokuapp.com/api/vehicles')
-    .then(res => {
+    axios.get('https://joes-autos.herokuapp.com/api/vehicles')
+    .then(response => {
       this.setState({
-        vehiclesToDisplay: res.data,
+        vehiclesToDisplay: response.data
       })
     })
-    .catch(error => console.log(error))
+    .catch(error => toast.error('Request Failed'))
   }
 
   getPotentialBuyers() {
